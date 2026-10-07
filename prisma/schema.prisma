@@ -1,0 +1,129 @@
+// Prisma Schema for BarberFlow (PostgreSQL / Neon compatible)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  ADMIN
+  BARBER
+}
+
+enum AppointmentStatus {
+  BOOKED
+  CONFIRMED
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+  NO_SHOW
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  passwordHash String
+  role         Role      @default(BARBER)
+  name         String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  barberProfile Barber?
+
+  @@map("users")
+}
+
+model Barber {
+  id          String        @id @default(cuid())
+  userId      String?       @unique
+  name        String
+  email       String
+  phone       String?
+  bio         String?
+  avatarUrl   String?
+  isActive    Boolean       @default(true)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  user         User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  appointments Appointment[]
+
+  @@index([isActive])
+  @@map("barbers")
+}
+
+model Customer {
+  id           String        @id @default(cuid())
+  name         String
+  email        String?
+  phone        String
+  notes        String?
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+
+  appointments Appointment[]
+
+  @@index([phone])
+  @@index([email])
+  @@map("customers")
+}
+
+model Service {
+  id              String        @id @default(cuid())
+  name            String
+  description     String?
+  price           Float
+  durationMinutes Int
+  isActive        Boolean       @default(true)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  appointments    Appointment[]
+
+  @@index([isActive])
+  @@map("services")
+}
+
+model Appointment {
+  id              String            @id @default(cuid())
+  customerId      String
+  barberId        String
+  serviceId       String
+  startTime       DateTime
+  endTime         DateTime
+  status          AppointmentStatus @default(BOOKED)
+  notes           String?
+  priceAtBooking  Float
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  customer        Customer          @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  barber          Barber            @relation(fields: [barberId], references: [id], onDelete: Restrict)
+  service         Service           @relation(fields: [serviceId], references: [id], onDelete: Restrict)
+
+  @@index([barberId, startTime, endTime])
+  @@index([customerId])
+  @@index([status])
+  @@index([startTime])
+  @@map("appointments")
+}
+
+model ShopSettings {
+  id                  String   @id @default("default-shop")
+  shopName            String   @default("BarberFlow Artisan Studio")
+  phone               String   @default("+1 (555) 234-5678")
+  email               String   @default("contact@barberflow.com")
+  address             String   @default("123 Main Street, Suite 100, Metropolis")
+  openingHour         String   @default("09:00")
+  closingHour         String   @default("19:00")
+  slotIntervalMinutes Int      @default(30)
+  openDays            String   @default("1,2,3,4,5,6") // Monday to Saturday (0=Sun, 1=Mon, ..., 6=Sat)
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  @@map("shop_settings")
+}
