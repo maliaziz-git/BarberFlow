@@ -36,7 +36,7 @@ export const CustomerDetailScreen = ({ route }: any) => {
   if (isLoading || !customer) {
     return (
       <View style={styles.centerBox}>
-        <ActivityIndicator size="large" color="#f59e0b" />
+        <ActivityIndicator size="large" color="#16a34a" />
       </View>
     );
   }
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
   visitsCount: {
     fontSize: 12,
-    color: "#f59e0b",
+    color: "#16a34a",
     fontWeight: "700",
     textTransform: "uppercase",
     marginTop: 2,
@@ -167,9 +167,9 @@ const styles = StyleSheet.create({
     fontSize: 12,
   },
   notesBox: {
-    backgroundColor: "rgba(245, 158, 11, 0.08)",
+    backgroundColor: "rgba(22, 163, 74, 0.08)",
     borderWidth: 1,
-    borderColor: "rgba(245, 158, 11, 0.2)",
+    borderColor: "rgba(22, 163, 74, 0.25)",
     padding: 12,
     borderRadius: 10,
     marginTop: 14,
@@ -177,7 +177,7 @@ const styles = StyleSheet.create({
   notesHeader: {
     fontSize: 11,
     fontWeight: "700",
-    color: "#f59e0b",
+    color: "#16a34a",
     textTransform: "uppercase",
   },
   notesBody: {
@@ -231,7 +231,7 @@ const styles = StyleSheet.create({
   statusBadge: {
     fontSize: 10,
     fontWeight: "700",
-    color: "#f59e0b",
+    color: "#16a34a",
   },
   apptNote: {
     fontSize: 11,

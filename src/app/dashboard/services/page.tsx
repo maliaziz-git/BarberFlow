@@ -186,7 +186,7 @@ export default function ServicesPage() {
 
               <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center text-sm font-black text-amber-600">
+                  <div className="flex items-center text-sm font-black text-emerald-600">
                     {formatCurrency(s.price)}
                   </div>
                   <div className="flex items-center gap-1 text-xs text-slate-500">
@@ -205,7 +205,7 @@ export default function ServicesPage() {
                   </button>
                   <button
                     onClick={() => handleOpenEdit(s)}
-                    className="p-1.5 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors"
+                    className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                   >
                     <Edit2 className="w-4 h-4" />
                   </button>
@@ -240,7 +240,7 @@ export default function ServicesPage() {
               placeholder="e.g. Traditional Scissor Cut & Wash"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
@@ -254,7 +254,7 @@ export default function ServicesPage() {
               placeholder="What does this service include?"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -274,7 +274,7 @@ export default function ServicesPage() {
                   placeholder="35.00"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
-                  className="w-full pl-7 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full pl-7 pr-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                   required
                 />
               </div>
@@ -291,7 +291,7 @@ export default function ServicesPage() {
                 placeholder="30"
                 value={durationMinutes}
                 onChange={(e) => setDurationMinutes(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -303,7 +303,7 @@ export default function ServicesPage() {
               id="isActiveCheck"
               checked={isActive}
               onChange={(e) => setIsActive(e.target.checked)}
-              className="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-slate-300"
+              className="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300"
             />
             <label htmlFor="isActiveCheck" className="text-sm font-medium text-slate-700">
               Active and visible on public booking page

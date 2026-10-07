@@ -86,7 +86,7 @@ export const AppointmentDetailScreen = ({ route, navigation }: any) => {
   if (isLoading || !appointment) {
     return (
       <View style={styles.centerBox}>
-        <ActivityIndicator size="large" color="#f59e0b" />
+        <ActivityIndicator size="large" color="#16a34a" />
       </View>
     );
   }
@@ -266,7 +266,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#27272a",
   },
   customerProfileBtnText: {
-    color: "#f59e0b",
+    color: "#16a34a",
     fontSize: 12,
     fontWeight: "700",
   },
@@ -327,8 +327,8 @@ const styles = StyleSheet.create({
   currentStatusBadge: {
     fontSize: 12,
     fontWeight: "800",
-    color: "#f59e0b",
-    backgroundColor: "rgba(245, 158, 11, 0.1)",
+    color: "#16a34a",
+    backgroundColor: "rgba(22, 163, 74, 0.15)",
     paddingHorizontal: 8,
     paddingVertical: 3,
     borderRadius: 6,
@@ -352,8 +352,8 @@ const styles = StyleSheet.create({
     borderColor: "#3f3f46",
   },
   statusButtonActive: {
-    backgroundColor: "#f59e0b",
-    borderColor: "#f59e0b",
+    backgroundColor: "#16a34a",
+    borderColor: "#16a34a",
   },
   statusButtonText: {
     fontSize: 11,
@@ -361,7 +361,7 @@ const styles = StyleSheet.create({
     color: "#d4d4d8",
   },
   statusButtonTextActive: {
-    color: "#09090b",
+    color: "#ffffff",
   },
   notesInput: {
     backgroundColor: "#09090b",
@@ -376,14 +376,14 @@ const styles = StyleSheet.create({
     marginTop: 8,
   },
   saveNotesBtn: {
-    backgroundColor: "#f59e0b",
+    backgroundColor: "#16a34a",
     paddingVertical: 10,
     borderRadius: 10,
     alignItems: "center",
     marginTop: 10,
   },
   saveNotesBtnText: {
-    color: "#09090b",
+    color: "#ffffff",
     fontWeight: "700",
     fontSize: 14,
   },

@@ -59,14 +59,14 @@ const styles = StyleSheet.create({
     width: 80,
     height: 80,
     borderRadius: 24,
-    backgroundColor: "#d97706",
+    backgroundColor: "#16a34a",
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 16,
   },
   avatarText: {
     fontSize: 40,
-    color: "#09090b",
+    color: "#ffffff",
   },
   userName: {
     fontSize: 22,
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
   },
   userRole: {
     fontSize: 13,
-    color: "#f59e0b",
+    color: "#16a34a",
     fontWeight: "700",
     marginTop: 4,
     textTransform: "uppercase",

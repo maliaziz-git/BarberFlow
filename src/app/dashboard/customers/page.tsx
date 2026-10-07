@@ -178,7 +178,7 @@ export default function CustomersPage() {
             placeholder="Search by name, phone, or email..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+            className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
         </div>
       </div>
@@ -220,7 +220,7 @@ export default function CustomersPage() {
 
                     <td className="py-3.5 px-4">
                       <div className="flex items-center gap-1.5 text-slate-700">
-                        <Phone className="w-3.5 h-3.5 text-amber-600" />
+                        <Phone className="w-3.5 h-3.5 text-emerald-600" />
                         <span>{c.phone}</span>
                       </div>
                       {c.email && (
@@ -233,7 +233,7 @@ export default function CustomersPage() {
 
                     <td className="py-3.5 px-4 max-w-xs">
                       {c.notes ? (
-                        <span className="text-xs text-slate-600 bg-amber-50/70 px-2 py-1 rounded line-clamp-1 border border-amber-200/40">
+                        <span className="text-xs text-slate-600 bg-emerald-50/70 px-2 py-1 rounded line-clamp-1 border border-emerald-200/40">
                           {c.notes}
                         </span>
                       ) : (
@@ -252,7 +252,7 @@ export default function CustomersPage() {
                         <button
                           title="View Appointment History"
                           onClick={() => handleOpenHistory(c)}
-                          className="p-1.5 text-amber-600 hover:bg-amber-50 rounded-lg transition-colors flex items-center gap-1 text-xs font-medium"
+                          className="p-1.5 text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors flex items-center gap-1 text-xs font-medium"
                         >
                           <History className="w-4 h-4" />
                           <span className="hidden sm:inline">History</span>
@@ -304,7 +304,7 @@ export default function CustomersPage() {
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
@@ -318,7 +318,7 @@ export default function CustomersPage() {
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -330,7 +330,7 @@ export default function CustomersPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
           </div>
@@ -344,7 +344,7 @@ export default function CustomersPage() {
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
               placeholder="e.g. Skin fade preferences, sensitive skin, favorite pomade"
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -397,7 +397,7 @@ export default function CustomersPage() {
                       <span>Barber: {appt.barber?.name}</span>
                     </div>
                     {appt.notes && (
-                      <p className="text-xs text-amber-800/80 italic mt-1 bg-amber-50/50 px-2 py-0.5 rounded">
+                      <p className="text-xs text-emerald-800/80 italic mt-1 bg-emerald-50/50 px-2 py-0.5 rounded">
                         Notes: {appt.notes}
                       </p>
                     )}

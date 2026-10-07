@@ -146,7 +146,7 @@ export default function AppointmentsPage() {
       {/* Filter Toolbar */}
       <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex flex-col md:flex-row items-stretch md:items-center gap-3">
         <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
-          <Filter className="w-4 h-4 text-amber-600" />
+          <Filter className="w-4 h-4 text-emerald-600" />
           <span>Filters:</span>
         </div>
 
@@ -157,7 +157,7 @@ export default function AppointmentsPage() {
               type="date"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -166,7 +166,7 @@ export default function AppointmentsPage() {
             <select
               value={selectedBarberId}
               onChange={(e) => setSelectedBarberId(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               <option value="">All Barbers</option>
               {barbers.map((b) => (
@@ -182,7 +182,7 @@ export default function AppointmentsPage() {
             <select
               value={selectedStatus}
               onChange={(e) => setSelectedStatus(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             >
               <option value="">All Statuses</option>
               <option value="BOOKED">BOOKED</option>
@@ -254,7 +254,7 @@ export default function AppointmentsPage() {
                           {format(start, "MMM d, yyyy")}
                         </div>
                         <div className="text-xs text-slate-500 flex items-center gap-1">
-                          <Clock className="w-3 h-3 text-amber-600" />
+                          <Clock className="w-3 h-3 text-emerald-600" />
                           {format(start, "hh:mm a")} - {format(end, "hh:mm a")}
                         </div>
                       </td>
@@ -299,7 +299,7 @@ export default function AppointmentsPage() {
                           value={appt.status}
                           disabled={isBusy}
                           onChange={(e) => handleStatusUpdate(appt.id, e.target.value)}
-                          className="text-xs font-semibold rounded-md border border-slate-200 px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-sm"
+                          className="text-xs font-semibold rounded-md border border-slate-200 px-2 py-1 bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500 shadow-sm"
                         >
                           <option value="BOOKED">BOOKED</option>
                           <option value="CONFIRMED">CONFIRMED</option>
@@ -319,7 +319,7 @@ export default function AppointmentsPage() {
                               setEditingAppointment(appt);
                               setIsModalOpen(true);
                             }}
-                            className="p-1.5 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors"
+                            className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                           >
                             <Edit2 className="w-4 h-4" />
                           </button>

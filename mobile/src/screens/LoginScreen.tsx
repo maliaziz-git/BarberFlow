@@ -151,14 +151,14 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 20,
-    backgroundColor: "#d97706",
+    backgroundColor: "#16a34a",
     alignItems: "center",
     justifyContent: "center",
     marginBottom: 12,
   },
   logoIcon: {
     fontSize: 32,
-    color: "#09090b",
+    color: "#ffffff",
   },
   brandTitle: {
     fontSize: 28,
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
     letterSpacing: -0.5,
   },
   brandGold: {
-    color: "#f59e0b",
+    color: "#16a34a",
   },
   brandSubtitle: {
     fontSize: 13,
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
   },
   serverToggleText: {
     fontSize: 12,
-    color: "#f59e0b",
+    color: "#16a34a",
     fontWeight: "600",
   },
   serverConfigBox: {
@@ -236,14 +236,14 @@ const styles = StyleSheet.create({
     color: "#71717a",
   },
   loginButton: {
-    backgroundColor: "#f59e0b",
+    backgroundColor: "#16a34a",
     borderRadius: 12,
     paddingVertical: 14,
     alignItems: "center",
     marginTop: 4,
   },
   loginButtonText: {
-    color: "#09090b",
+    color: "#ffffff",
     fontSize: 16,
     fontWeight: "700",
   },

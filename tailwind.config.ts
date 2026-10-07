@@ -10,22 +10,24 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          50: "#fdf8f6",
-          100: "#f2e8e5",
-          200: "#eaddd7",
-          300: "#e0cec7",
-          400: "#d2bab0",
-          500: "#c28e5c", // Warm artisan barber amber/gold
-          600: "#b07b46",
-          700: "#8e5b2f",
-          800: "#69401f",
-          900: "#442711",
+          50: "#f0fdf4",
+          100: "#dcfce7",
+          200: "#bbf7d0",
+          300: "#86efac",
+          400: "#4ade80",
+          500: "#16a34a", // Signature vibrant studio green from the modern salon interior
+          600: "#15803d",
+          700: "#166534",
+          800: "#14532d",
+          900: "#052e16",
         },
-        dark: {
-          800: "#18181b",
-          900: "#0f0f12",
-          950: "#09090b",
-        }
+        studio: {
+          white: "#ffffff",
+          offwhite: "#f8fafc",
+          muted: "#f1f5f9",
+          slate: "#64748b",
+          dark: "#0f172a",
+        },
       },
     },
   },

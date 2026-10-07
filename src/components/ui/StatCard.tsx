@@ -27,7 +27,7 @@ export const StatCard: React.FC<StatCardProps> = ({
   subtitle,
   icon: Icon,
   trend,
-  color = "amber",
+  color = "emerald",
 }) => {
   return (
     <div className="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">

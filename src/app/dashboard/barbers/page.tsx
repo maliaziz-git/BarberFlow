@@ -171,7 +171,7 @@ export default function BarbersPage() {
               }`}
             >
               <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-amber-100 border border-amber-200 flex items-center justify-center text-amber-800 font-bold overflow-hidden shrink-0 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold overflow-hidden shrink-0 shadow-inner">
                   {b.avatarUrl ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -180,7 +180,7 @@ export default function BarbersPage() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <User className="w-7 h-7 text-amber-700" />
+                    <User className="w-7 h-7 text-emerald-700" />
                   )}
                 </div>
 
@@ -219,7 +219,7 @@ export default function BarbersPage() {
               )}
 
               <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200/50">
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/50">
                   {b._count?.appointments || 0} lifetime bookings
                 </span>
 
@@ -232,7 +232,7 @@ export default function BarbersPage() {
                   </button>
                   <button
                     onClick={() => handleOpenEdit(b)}
-                    className="p-1.5 text-slate-600 hover:text-amber-600 hover:bg-amber-50 rounded-lg transition-colors"
+                    className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
                   >
                     <Edit2 className="w-4 h-4" />
                   </button>
@@ -267,7 +267,7 @@ export default function BarbersPage() {
               placeholder="e.g. Alex Barber"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               required
             />
           </div>
@@ -282,7 +282,7 @@ export default function BarbersPage() {
                 placeholder="barber@barberflow.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -296,7 +296,7 @@ export default function BarbersPage() {
                 placeholder="+1 (555) 789-0001"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
           </div>
@@ -310,7 +310,7 @@ export default function BarbersPage() {
               placeholder="https://images.unsplash.com/photo-..."
               value={avatarUrl}
               onChange={(e) => setAvatarUrl(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -323,7 +323,7 @@ export default function BarbersPage() {
               placeholder="e.g. Master barber specializing in skin fades and straight razor shaves"
               value={bio}
               onChange={(e) => setBio(e.target.value)}
-              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+              className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
             />
           </div>
 
@@ -333,7 +333,7 @@ export default function BarbersPage() {
               id="isActiveBarberCheck"
               checked={isActive}
               onChange={(e) => setIsActive(e.target.checked)}
-              className="w-4 h-4 rounded text-amber-600 focus:ring-amber-500 border-slate-300"
+              className="w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 border-slate-300"
             />
             <label htmlFor="isActiveBarberCheck" className="text-sm font-medium text-slate-700">
               Active (eligible to receive bookings)

@@ -166,12 +166,12 @@ export default function PublicBookingPage() {
       <header className="border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0 z-20">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5 group">
-            <div className="w-9 h-9 rounded-xl bg-amber-500 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-amber-500/20 group-hover:bg-amber-400 transition-colors">
+            <div className="w-9 h-9 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-emerald-500/20 group-hover:bg-emerald-400 transition-colors">
               <Scissors className="w-5 h-5 -rotate-45" />
             </div>
             <div>
               <span className="font-bold text-white text-base tracking-tight">
-                Barber<span className="text-amber-400">Flow</span>
+                Barber<span className="text-emerald-400">Flow</span>
               </span>
               <span className="text-[10px] text-slate-400 block -mt-0.5">
                 {settings?.shopName || "Artisan Barber Studio"}
@@ -181,7 +181,7 @@ export default function PublicBookingPage() {
 
           <Link
             href="/login"
-            className="text-xs font-semibold text-amber-400 hover:text-amber-300 px-3 py-1.5 rounded-lg border border-amber-500/30 hover:bg-amber-500/10 transition-colors"
+            className="text-xs font-semibold text-emerald-400 hover:text-emerald-300 px-3 py-1.5 rounded-lg border border-emerald-500/30 hover:bg-emerald-500/10 transition-colors"
           >
             Staff Login
           </Link>
@@ -192,7 +192,7 @@ export default function PublicBookingPage() {
       <main className="max-w-3xl mx-auto w-full px-4 py-8 sm:py-12 flex-1">
         {step < 5 && (
           <div className="text-center mb-8">
-            <span className="text-xs font-bold tracking-widest uppercase text-amber-400 bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">
+            <span className="text-xs font-bold tracking-widest uppercase text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
               Step {step} of 4
             </span>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white mt-3">
@@ -222,13 +222,13 @@ export default function PublicBookingPage() {
                     onClick={() => setSelectedService(s)}
                     className={`cursor-pointer rounded-2xl p-5 border transition-all ${
                       isSelected
-                        ? "bg-amber-500/15 border-amber-500 ring-2 ring-amber-500/40 text-white"
+                        ? "bg-emerald-500/15 border-emerald-500 ring-2 ring-emerald-500/40 text-white"
                         : "bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-900 text-slate-300"
                     }`}
                   >
                     <div className="flex items-start justify-between gap-2">
                       <h3 className="font-bold text-base text-white">{s.name}</h3>
-                      <span className="font-extrabold text-amber-400 text-base">
+                      <span className="font-extrabold text-emerald-400 text-base">
                         {formatCurrency(s.price)}
                       </span>
                     </div>
@@ -239,11 +239,11 @@ export default function PublicBookingPage() {
 
                     <div className="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
                       <span className="flex items-center gap-1">
-                        <Clock className="w-3.5 h-3.5 text-amber-500" />
+                        <Clock className="w-3.5 h-3.5 text-emerald-500" />
                         {formatDuration(s.durationMinutes)}
                       </span>
                       {isSelected ? (
-                        <span className="text-amber-400 font-semibold flex items-center gap-1">
+                        <span className="text-emerald-400 font-semibold flex items-center gap-1">
                           Selected <CheckCircle className="w-4 h-4" />
                         </span>
                       ) : (
@@ -282,11 +282,11 @@ export default function PublicBookingPage() {
                     onClick={() => setSelectedBarber(b)}
                     className={`cursor-pointer rounded-2xl p-5 border text-center transition-all ${
                       isSelected
-                        ? "bg-amber-500/15 border-amber-500 ring-2 ring-amber-500/40"
+                        ? "bg-emerald-500/15 border-emerald-500 ring-2 ring-emerald-500/40"
                         : "bg-slate-900/80 border-slate-800 hover:border-slate-700 hover:bg-slate-900"
                     }`}
                   >
-                    <div className="w-20 h-20 mx-auto rounded-full bg-slate-800 border-2 border-amber-500/50 overflow-hidden mb-3 flex items-center justify-center">
+                    <div className="w-20 h-20 mx-auto rounded-full bg-slate-800 border-2 border-emerald-500/50 overflow-hidden mb-3 flex items-center justify-center">
                       {b.avatarUrl ? (
                         // eslint-disable-next-line @next/next/no-img-element
                         <img
@@ -295,7 +295,7 @@ export default function PublicBookingPage() {
                           className="w-full h-full object-cover"
                         />
                       ) : (
-                        <User className="w-10 h-10 text-amber-400" />
+                        <User className="w-10 h-10 text-emerald-400" />
                       )}
                     </div>
 
@@ -306,7 +306,7 @@ export default function PublicBookingPage() {
 
                     <div className="mt-4 pt-3 border-t border-slate-800/80">
                       {isSelected ? (
-                        <span className="text-xs text-amber-400 font-bold flex items-center justify-center gap-1">
+                        <span className="text-xs text-emerald-400 font-bold flex items-center justify-center gap-1">
                           Selected <CheckCircle className="w-3.5 h-3.5" />
                         </span>
                       ) : (
@@ -359,7 +359,7 @@ export default function PublicBookingPage() {
                       onClick={() => setSelectedDate(formatted)}
                       className={`px-4 py-3 rounded-xl border text-center shrink-0 transition-all ${
                         isCurDate
-                          ? "bg-amber-500 border-amber-500 text-slate-950 font-bold shadow-lg shadow-amber-500/20"
+                          ? "bg-emerald-500 border-emerald-500 text-slate-950 font-bold shadow-lg shadow-emerald-500/20"
                           : "bg-slate-800/80 border-slate-700 text-slate-300 hover:border-slate-600 hover:bg-slate-800"
                       }`}
                     >
@@ -382,7 +382,7 @@ export default function PublicBookingPage() {
                   Available Slots for {selectedBarber?.name} ({selectedService?.durationMinutes} min)
                 </span>
                 {isLoadingSlots && (
-                  <span className="text-xs text-amber-400 animate-pulse">
+                  <span className="text-xs text-emerald-400 animate-pulse">
                     Calculating availability...
                   </span>
                 )}
@@ -406,9 +406,9 @@ export default function PublicBookingPage() {
                         onClick={() => setSelectedSlot(slot.time)}
                         className={`py-2.5 px-2 rounded-xl text-xs font-semibold border text-center transition-all ${
                           isSelected
-                            ? "bg-amber-500 border-amber-500 text-slate-950 shadow-md ring-2 ring-amber-400"
+                            ? "bg-emerald-500 border-emerald-500 text-slate-950 shadow-md ring-2 ring-emerald-400"
                             : slot.available
-                            ? "bg-slate-800 border-slate-700 text-slate-200 hover:border-amber-400 hover:text-white"
+                            ? "bg-slate-800 border-slate-700 text-slate-200 hover:border-emerald-400 hover:text-white"
                             : "bg-slate-950/60 border-slate-800/40 text-slate-600 line-through cursor-not-allowed"
                         }`}
                       >
@@ -467,7 +467,7 @@ export default function PublicBookingPage() {
               </div>
               <div className="flex justify-between items-center text-slate-300">
                 <span>Appointment Time:</span>
-                <span className="font-bold text-amber-400">
+                <span className="font-bold text-emerald-400">
                   {format(new Date(`${selectedDate}T00:00:00`), "MMMM d, yyyy")} at {selectedSlot}
                 </span>
               </div>
@@ -489,7 +489,7 @@ export default function PublicBookingPage() {
                   placeholder="e.g. John Miller"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
+                  className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
                   required
                 />
               </div>
@@ -504,7 +504,7 @@ export default function PublicBookingPage() {
                     placeholder="e.g. (555) 234-5678"
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
+                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
                     required
                   />
                 </div>
@@ -518,7 +518,7 @@ export default function PublicBookingPage() {
                     placeholder="john@example.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
+                    className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
                   />
                 </div>
               </div>
@@ -532,7 +532,7 @@ export default function PublicBookingPage() {
                   placeholder="e.g. Low skin fade, beard sculpting, sensitive neck"
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
-                  className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
+                  className="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-sm"
                 />
               </div>
             </div>
@@ -588,13 +588,13 @@ export default function PublicBookingPage() {
               </div>
               <div className="flex justify-between items-center text-slate-400">
                 <span>Date & Time:</span>
-                <span className="font-bold text-amber-400">
+                <span className="font-bold text-emerald-400">
                   {format(new Date(confirmedBooking.startTime), "EEEE, MMMM d, yyyy 'at' hh:mm a")}
                 </span>
               </div>
               <div className="flex justify-between items-center text-slate-400 border-t border-slate-800 pt-2">
                 <span>Status:</span>
-                <span className="font-bold text-blue-400 uppercase">
+                <span className="font-bold text-emerald-400 uppercase">
                   {confirmedBooking.status}
                 </span>
               </div>

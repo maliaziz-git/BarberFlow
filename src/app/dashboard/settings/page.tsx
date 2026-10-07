@@ -136,7 +136,7 @@ export default function SettingsPage() {
         {/* Shop Info Card */}
         <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm space-y-4">
           <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-            <Building2 className="w-5 h-5 text-amber-600" />
+            <Building2 className="w-5 h-5 text-emerald-600" />
             General Information
           </h3>
 
@@ -149,7 +149,7 @@ export default function SettingsPage() {
                 type="text"
                 value={shopName}
                 onChange={(e) => setShopName(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -162,7 +162,7 @@ export default function SettingsPage() {
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
 
@@ -174,7 +174,7 @@ export default function SettingsPage() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
 
@@ -186,7 +186,7 @@ export default function SettingsPage() {
                 type="text"
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               />
             </div>
           </div>
@@ -195,7 +195,7 @@ export default function SettingsPage() {
         {/* Operating Hours Card */}
         <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-sm space-y-5">
           <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-            <Clock className="w-5 h-5 text-amber-600" />
+            <Clock className="w-5 h-5 text-emerald-600" />
             Working Hours & Booking Rules
           </h3>
 
@@ -208,7 +208,7 @@ export default function SettingsPage() {
                 type="time"
                 value={openingHour}
                 onChange={(e) => setOpeningHour(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -221,7 +221,7 @@ export default function SettingsPage() {
                 type="time"
                 value={closingHour}
                 onChange={(e) => setClosingHour(e.target.value)}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
                 required
               />
             </div>
@@ -233,7 +233,7 @@ export default function SettingsPage() {
               <select
                 value={slotIntervalMinutes}
                 onChange={(e) => setSlotIntervalMinutes(Number(e.target.value))}
-                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                className="w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
                 <option value={15}>15 minutes</option>
                 <option value={20}>20 minutes</option>
@@ -258,7 +258,7 @@ export default function SettingsPage() {
                     onClick={() => toggleDay(day.id)}
                     className={`p-3 rounded-xl border text-xs font-bold text-center transition-all ${
                       isOpen
-                        ? "bg-amber-600 border-amber-600 text-white shadow-sm"
+                        ? "bg-emerald-600 border-emerald-600 text-white shadow-sm"
                         : "bg-slate-50 border-slate-200 text-slate-400 hover:border-slate-300"
                     }`}
                   >

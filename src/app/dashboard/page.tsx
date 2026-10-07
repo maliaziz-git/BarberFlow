@@ -80,9 +80,9 @@ export default function DashboardOverviewPage() {
   return (
     <div className="space-y-8">
       {/* Top Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gradient-to-r from-slate-900 via-slate-800 to-amber-950 p-6 rounded-2xl text-white shadow-lg">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gradient-to-r from-slate-900 via-slate-800 to-emerald-950 p-6 rounded-2xl text-white shadow-lg">
         <div>
-          <span className="text-xs uppercase tracking-wider font-semibold text-amber-400 bg-amber-400/10 px-2.5 py-1 rounded-full border border-amber-400/20">
+          <span className="text-xs uppercase tracking-wider font-semibold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/30">
             {role === "ADMIN" ? "Shop Performance Overview" : `Barber Dashboard: ${stats?.barberName || "Alex"}`}
           </span>
           <h2 className="text-2xl font-bold mt-2 tracking-tight">
@@ -95,7 +95,7 @@ export default function DashboardOverviewPage() {
         <div className="flex items-center gap-3">
           <Button
             onClick={() => setIsModalOpen(true)}
-            className="bg-amber-500 hover:bg-amber-400 text-slate-950 font-semibold"
+            className="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold shadow-md shadow-emerald-500/20"
           >
             <Plus className="w-4 h-4" />
             Quick Booking
@@ -129,7 +129,7 @@ export default function DashboardOverviewPage() {
           value={stats?.totalCustomers || 0}
           subtitle="Registered customer profiles"
           icon={Users}
-          color="amber"
+          color="emerald"
         />
         <StatCard
           title="Active Barbers"
@@ -180,7 +180,7 @@ export default function DashboardOverviewPage() {
           </div>
           <Link
             href="/dashboard/appointments"
-            className="text-xs font-semibold text-amber-600 hover:text-amber-700 flex items-center gap-1"
+            className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
           >
             Full Calendar <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -209,11 +209,11 @@ export default function DashboardOverviewPage() {
                   className="p-4 sm:p-5 hover:bg-slate-50/80 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
                 >
                   <div className="flex items-start sm:items-center gap-4">
-                    <div className="w-16 text-center py-2 px-1 bg-amber-50 border border-amber-200/60 rounded-xl shrink-0">
-                      <span className="block text-xs font-bold text-amber-800 uppercase">
+                    <div className="w-16 text-center py-2 px-1 bg-emerald-50 border border-emerald-200/60 rounded-xl shrink-0">
+                      <span className="block text-xs font-bold text-emerald-800 uppercase">
                         {startTime.split(" ")[1]}
                       </span>
-                      <span className="block text-sm font-black text-amber-950">
+                      <span className="block text-sm font-black text-emerald-950">
                         {startTime.split(" ")[0]}
                       </span>
                     </div>
@@ -228,7 +228,7 @@ export default function DashboardOverviewPage() {
 
                       <div className="flex items-center gap-3 text-xs text-slate-500 flex-wrap">
                         <span className="flex items-center gap-1 font-medium text-slate-700">
-                          <Scissors className="w-3.5 h-3.5 text-amber-600" />
+                          <Scissors className="w-3.5 h-3.5 text-emerald-600" />
                           {appt.service?.name} ({appt.service?.durationMinutes}m • ${appt.priceAtBooking})
                         </span>
                         {role === "ADMIN" && (
@@ -244,7 +244,7 @@ export default function DashboardOverviewPage() {
                       </div>
 
                       {appt.notes && (
-                        <p className="text-xs text-amber-900/80 italic bg-amber-50/50 px-2 py-0.5 rounded inline-block">
+                        <p className="text-xs text-emerald-900/80 italic bg-emerald-50/50 px-2 py-0.5 rounded inline-block">
                           Note: {appt.notes}
                         </p>
                       )}

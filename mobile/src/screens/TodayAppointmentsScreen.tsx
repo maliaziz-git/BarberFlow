@@ -122,7 +122,7 @@ export const TodayAppointmentsScreen = ({ navigation }: any) => {
 
       {isLoading ? (
         <View style={styles.centerBox}>
-          <ActivityIndicator size="large" color="#f59e0b" />
+          <ActivityIndicator size="large" color="#16a34a" />
           <Text style={styles.loadingText}>Fetching appointments...</Text>
         </View>
       ) : appointments.length === 0 ? (
@@ -143,7 +143,7 @@ export const TodayAppointmentsScreen = ({ navigation }: any) => {
             <RefreshControl
               refreshing={refreshing}
               onRefresh={onRefresh}
-              tintColor="#f59e0b"
+              tintColor="#16a34a"
             />
           }
         />
@@ -169,7 +169,7 @@ const styles = StyleSheet.create({
   },
   welcomeText: {
     fontSize: 12,
-    color: "#f59e0b",
+    color: "#16a34a",
     fontWeight: "700",
     textTransform: "uppercase",
     letterSpacing: 0.5,
@@ -223,7 +223,7 @@ const styles = StyleSheet.create({
   },
   durationText: {
     fontSize: 10,
-    color: "#f59e0b",
+    color: "#16a34a",
     fontWeight: "600",
     marginTop: 2,
   },
@@ -297,7 +297,7 @@ const styles = StyleSheet.create({
   },
   emptyIcon: {
     fontSize: 48,
-    color: "#f59e0b",
+    color: "#16a34a",
     marginBottom: 12,
   },
   emptyTitle: {
