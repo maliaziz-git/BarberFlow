@@ -170,15 +170,15 @@ export default function CustomersPage() {
       </div>
 
       {/* Search Toolbar */}
-      <div className="bg-white p-4 rounded-xl border border-slate-200/80 shadow-sm flex items-center gap-3">
+      <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-sm flex items-center gap-3 transition-colors">
         <div className="relative flex-1">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-400 dark:text-slate-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             placeholder="Search by name, phone, or email..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-700 rounded-lg text-sm text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-emerald-500"
           />
         </div>
       </div>
@@ -199,11 +199,11 @@ export default function CustomersPage() {
           icon={Users}
         />
       ) : (
-        <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
+        <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden transition-colors">
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse text-sm">
               <thead>
-                <tr className="bg-slate-50 border-b border-slate-200/80 text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+                <tr className="bg-slate-50 dark:bg-slate-950 border-b border-slate-200/80 dark:border-slate-800 text-[11px] font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                   <th className="py-3.5 px-4">Client Name</th>
                   <th className="py-3.5 px-4">Contact Info</th>
                   <th className="py-3.5 px-4">Preferences / Notes</th>
@@ -211,20 +211,20 @@ export default function CustomersPage() {
                   <th className="py-3.5 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {customers.map((c) => (
-                  <tr key={c.id} className="hover:bg-slate-50/70 transition-colors">
-                    <td className="py-3.5 px-4 whitespace-nowrap font-semibold text-slate-900">
+                  <tr key={c.id} className="hover:bg-slate-50/70 dark:hover:bg-slate-800/50 transition-colors">
+                    <td className="py-3.5 px-4 whitespace-nowrap font-semibold text-slate-900 dark:text-white">
                       {c.name}
                     </td>
 
                     <td className="py-3.5 px-4">
-                      <div className="flex items-center gap-1.5 text-slate-700">
-                        <Phone className="w-3.5 h-3.5 text-emerald-600" />
+                      <div className="flex items-center gap-1.5 text-slate-700 dark:text-slate-300">
+                        <Phone className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                         <span>{c.phone}</span>
                       </div>
                       {c.email && (
-                        <div className="flex items-center gap-1.5 text-xs text-slate-500 mt-0.5">
+                        <div className="flex items-center gap-1.5 text-xs text-slate-500 dark:text-slate-400 mt-0.5">
                           <Mail className="w-3 h-3 text-slate-400" />
                           <span>{c.email}</span>
                         </div>
@@ -233,16 +233,16 @@ export default function CustomersPage() {
 
                     <td className="py-3.5 px-4 max-w-xs">
                       {c.notes ? (
-                        <span className="text-xs text-slate-600 bg-emerald-50/70 px-2 py-1 rounded line-clamp-1 border border-emerald-200/40">
+                        <span className="text-xs text-slate-600 dark:text-slate-300 bg-emerald-50/70 dark:bg-emerald-950/40 px-2 py-1 rounded line-clamp-1 border border-emerald-200/40 dark:border-emerald-800/40">
                           {c.notes}
                         </span>
                       ) : (
-                        <span className="text-xs text-slate-400 italic">None</span>
+                        <span className="text-xs text-slate-400 dark:text-slate-500 italic">None</span>
                       )}
                     </td>
 
                     <td className="py-3.5 px-4 whitespace-nowrap">
-                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                         {c._count?.appointments || 0} visits
                       </span>
                     </td>

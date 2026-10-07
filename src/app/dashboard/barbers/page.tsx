@@ -164,14 +164,14 @@ export default function BarbersPage() {
           {barbers.map((b) => (
             <div
               key={b.id}
-              className={`bg-white rounded-2xl p-6 border transition-all ${
+              className={`bg-white dark:bg-slate-900 rounded-2xl p-6 border transition-all ${
                 b.isActive
-                  ? "border-slate-200/80 shadow-sm hover:shadow-md"
-                  : "border-slate-200 bg-slate-50/50 opacity-70"
+                  ? "border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md"
+                  : "border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 opacity-70"
               }`}
             >
               <div className="flex items-start gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-800 font-bold overflow-hidden shrink-0 shadow-inner">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 flex items-center justify-center text-emerald-800 dark:text-emerald-300 font-bold overflow-hidden shrink-0 shadow-inner">
                   {b.avatarUrl ? (
                     // eslint-disable-next-line @next/next/no-img-element
                     <img
@@ -180,31 +180,31 @@ export default function BarbersPage() {
                       className="w-full h-full object-cover"
                     />
                   ) : (
-                    <User className="w-7 h-7 text-emerald-700" />
+                    <User className="w-7 h-7 text-emerald-700 dark:text-emerald-400" />
                   )}
                 </div>
 
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center justify-between gap-2">
-                    <h3 className="font-bold text-base text-slate-900 truncate">
+                    <h3 className="font-bold text-base text-slate-900 dark:text-white truncate">
                       {b.name}
                     </h3>
                     <span
                       className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shrink-0 ${
                         b.isActive
-                          ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                          : "bg-slate-200 text-slate-600"
+                          ? "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
+                          : "bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
                       }`}
                     >
                       {b.isActive ? "Active" : "Inactive"}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 truncate flex items-center gap-1 mt-1">
+                  <p className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1 mt-1">
                     <Mail className="w-3 h-3 text-slate-400 shrink-0" />
                     {b.email}
                   </p>
                   {b.phone && (
-                    <p className="text-xs text-slate-500 truncate flex items-center gap-1 mt-0.5">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 truncate flex items-center gap-1 mt-0.5">
                       <Phone className="w-3 h-3 text-slate-400 shrink-0" />
                       {b.phone}
                     </p>
@@ -213,26 +213,26 @@ export default function BarbersPage() {
               </div>
 
               {b.bio && (
-                <p className="text-xs text-slate-600 mt-4 bg-slate-50 p-2.5 rounded-lg border border-slate-100 line-clamp-2">
+                <p className="text-xs text-slate-600 dark:text-slate-300 mt-4 bg-slate-50 dark:bg-slate-950/60 p-2.5 rounded-lg border border-slate-100 dark:border-slate-800 line-clamp-2">
                   {b.bio}
                 </p>
               )}
 
-              <div className="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/50">
+              <div className="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
+                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 border border-emerald-200/50 dark:border-emerald-800/50">
                   {b._count?.appointments || 0} lifetime bookings
                 </span>
 
                 <div className="flex items-center gap-1">
                   <button
                     onClick={() => handleToggleActive(b)}
-                    className="text-xs px-2 py-1 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded"
+                    className="text-xs px-2 py-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded"
                   >
                     {b.isActive ? "Deactivate" : "Activate"}
                   </button>
                   <button
                     onClick={() => handleOpenEdit(b)}
-                    className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
+                    className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
                   >
                     <Edit2 className="w-4 h-4" />
                   </button>

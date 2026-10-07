@@ -17,6 +17,7 @@ import {
   UserCircle,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 
 interface SidebarProps {
   userRole?: "ADMIN" | "BARBER";
@@ -50,18 +51,18 @@ export const Sidebar: React.FC<SidebarProps> = ({
   );
 
   const sidebarContent = (
-    <div className="flex flex-col h-full bg-slate-900 text-slate-200 border-r border-slate-800">
+    <div className="flex flex-col h-full bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 border-r border-slate-200/80 dark:border-slate-800 transition-colors">
       {/* Brand Header */}
-      <div className="p-6 border-b border-slate-800 flex items-center justify-between">
+      <div className="p-6 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
         <Link href="/dashboard" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-emerald-500/20 group-hover:bg-emerald-400 transition-colors">
+          <div className="w-10 h-10 rounded-xl bg-emerald-500 flex items-center justify-center text-white font-black shadow-lg shadow-emerald-500/20 group-hover:bg-emerald-600 transition-colors">
             <Scissors className="w-5 h-5 -rotate-45 text-white" />
           </div>
           <div>
-            <span className="text-lg font-bold tracking-tight text-white flex items-center gap-1">
-              Barber<span className="text-emerald-400">Flow</span>
+            <span className="text-lg font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-1">
+              Barber<span className="text-emerald-600 dark:text-emerald-400">Flow</span>
             </span>
-            <span className="text-[10px] tracking-wider uppercase font-semibold text-slate-400 block">
+            <span className="text-[10px] tracking-wider uppercase font-semibold text-slate-400 dark:text-slate-500 block">
               {userRole === "ADMIN" ? "Admin Console" : "Barber Portal"}
             </span>
           </div>
@@ -70,7 +71,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
       {/* Navigation Links */}
       <div className="flex-1 py-6 px-3 space-y-1 overflow-y-auto">
-        <div className="px-3 pb-2 text-[11px] font-semibold tracking-wider uppercase text-slate-400">
+        <div className="px-3 pb-2 text-[11px] font-semibold tracking-wider uppercase text-slate-400 dark:text-slate-500">
           Management
         </div>
         {allowedNav.map((item) => {
@@ -85,16 +86,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
               className={cn(
                 "flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group",
                 isActive
-                  ? "bg-emerald-500/15 text-emerald-400 font-semibold"
-                  : "text-slate-300 hover:text-white hover:bg-slate-800/60"
+                  ? "bg-emerald-50 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-semibold"
+                  : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-slate-800/60"
               )}
             >
               <item.icon
                 className={cn(
                   "w-4 h-4 transition-colors",
                   isActive
-                    ? "text-emerald-400"
-                    : "text-slate-400 group-hover:text-slate-200"
+                    ? "text-emerald-600 dark:text-emerald-400"
+                    : "text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-200"
                 )}
               />
               <span>{item.name}</span>
@@ -102,38 +103,42 @@ export const Sidebar: React.FC<SidebarProps> = ({
           );
         })}
 
-        <div className="pt-6 px-3 pb-2 text-[11px] font-semibold tracking-wider uppercase text-slate-400">
+        <div className="pt-6 px-3 pb-2 text-[11px] font-semibold tracking-wider uppercase text-slate-400 dark:text-slate-500">
           Public Client
         </div>
         <Link
           href="/book"
           target="_blank"
-          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors group"
+          className="flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100/70 dark:hover:bg-slate-800/60 transition-colors group"
         >
           <div className="flex items-center gap-3">
-            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-400" />
+            <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-emerald-600 dark:group-hover:text-emerald-400" />
             <span>Public Booking Page</span>
           </div>
-          <span className="text-[10px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700">
+          <span className="text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-1.5 py-0.5 rounded border border-slate-200 dark:border-slate-700">
             Open
           </span>
         </Link>
       </div>
 
-      {/* User profile & quick sign out */}
-      <div className="p-4 border-t border-slate-800 bg-slate-950/40">
-        <div className="flex items-center justify-between">
+      {/* Theme Toggle & User profile */}
+      <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-950/40 space-y-3">
+        <ThemeToggle variant="sidebar" />
+
+        <div className="flex items-center justify-between pt-1">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="w-9 h-9 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-emerald-400 shrink-0">
+            <div className="w-9 h-9 rounded-full bg-emerald-50 dark:bg-slate-800 border border-emerald-100 dark:border-slate-700 flex items-center justify-center text-emerald-600 dark:text-emerald-400 shrink-0">
               {userRole === "ADMIN" ? (
-                <ShieldCheck className="w-5 h-5 text-emerald-400" />
+                <ShieldCheck className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
               ) : (
-                <UserCircle className="w-5 h-5 text-emerald-400" />
+                <UserCircle className="w-5 h-5 text-emerald-600 dark:text-emerald-400" />
               )}
             </div>
             <div className="min-w-0">
-              <p className="text-sm font-medium text-white truncate">{userName}</p>
-              <p className="text-xs text-emerald-400 font-mono capitalize">
+              <p className="text-sm font-semibold text-slate-900 dark:text-white truncate">
+                {userName}
+              </p>
+              <p className="text-xs text-emerald-600 dark:text-emerald-400 font-mono capitalize">
                 {userRole.toLowerCase()}
               </p>
             </div>
@@ -142,7 +147,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               onClick={onLogout}
               title="Log out"
-              className="p-2 text-slate-400 hover:text-rose-400 hover:bg-slate-800 rounded-lg transition-colors"
+              className="p-2 text-slate-400 hover:text-rose-600 dark:hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
             >
               <LogOut className="w-4 h-4" />
             </button>

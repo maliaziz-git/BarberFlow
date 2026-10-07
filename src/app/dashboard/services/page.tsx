@@ -161,35 +161,35 @@ export default function ServicesPage() {
           {services.map((s) => (
             <div
               key={s.id}
-              className={`bg-white rounded-2xl p-5 border transition-all ${
+              className={`bg-white dark:bg-slate-900 rounded-2xl p-5 border transition-all ${
                 s.isActive
-                  ? "border-slate-200/80 shadow-sm hover:shadow-md"
-                  : "border-slate-200 bg-slate-50/50 opacity-70"
+                  ? "border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md"
+                  : "border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-950/50 opacity-70"
               }`}
             >
               <div className="flex items-start justify-between gap-2">
-                <h3 className="font-bold text-base text-slate-900">{s.name}</h3>
+                <h3 className="font-bold text-base text-slate-900 dark:text-white">{s.name}</h3>
                 <span
                   className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
                     s.isActive
-                      ? "bg-emerald-50 text-emerald-700 border border-emerald-200"
-                      : "bg-slate-200 text-slate-600"
+                      ? "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-800"
+                      : "bg-slate-200 dark:bg-slate-800 text-slate-600 dark:text-slate-400"
                   }`}
                 >
                   {s.isActive ? "Active" : "Inactive"}
                 </span>
               </div>
 
-              <p className="text-xs text-slate-500 mt-2 min-h-[36px] line-clamp-2">
+              <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 min-h-[36px] line-clamp-2">
                 {s.description || "No description provided."}
               </p>
 
-              <div className="mt-4 pt-4 border-t border-slate-100 flex items-center justify-between">
+              <div className="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="flex items-center text-sm font-black text-emerald-600">
+                  <div className="flex items-center text-sm font-black text-emerald-600 dark:text-emerald-400">
                     {formatCurrency(s.price)}
                   </div>
-                  <div className="flex items-center gap-1 text-xs text-slate-500">
+                  <div className="flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400">
                     <Clock className="w-3.5 h-3.5 text-slate-400" />
                     <span>{formatDuration(s.durationMinutes)}</span>
                   </div>
@@ -199,13 +199,13 @@ export default function ServicesPage() {
                   <button
                     onClick={() => handleToggleActive(s)}
                     title={s.isActive ? "Deactivate" : "Activate"}
-                    className="text-xs px-2 py-1 text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded"
+                    className="text-xs px-2 py-1 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 rounded"
                   >
                     {s.isActive ? "Disable" : "Enable"}
                   </button>
                   <button
                     onClick={() => handleOpenEdit(s)}
-                    className="p-1.5 text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-colors"
+                    className="p-1.5 text-slate-600 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-slate-800 rounded-lg transition-colors"
                   >
                     <Edit2 className="w-4 h-4" />
                   </button>

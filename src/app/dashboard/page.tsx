@@ -141,8 +141,8 @@ export default function DashboardOverviewPage() {
       </div>
 
       {/* Status Breakdown Pills */}
-      <div className="bg-white p-5 rounded-xl border border-slate-200/80 shadow-sm">
-        <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">
+      <div className="bg-white dark:bg-slate-900 p-5 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-sm transition-colors">
+        <h3 className="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">
           Appointment Status Pipeline
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -156,12 +156,12 @@ export default function DashboardOverviewPage() {
           ].map((item) => (
             <div
               key={item.key}
-              className="p-3 rounded-lg border border-slate-100 bg-slate-50/60 flex flex-col items-start gap-1"
+              className="p-3 rounded-lg border border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-800/40 flex flex-col items-start gap-1"
             >
               <Badge variant={item.variant} size="sm">
                 {item.label}
               </Badge>
-              <span className="text-xl font-bold text-slate-800 mt-1">
+              <span className="text-xl font-bold text-slate-800 dark:text-white mt-1">
                 {stats?.statusCounts?.[item.key] || 0}
               </span>
             </div>
@@ -170,17 +170,17 @@ export default function DashboardOverviewPage() {
       </div>
 
       {/* Today's Schedule Live List */}
-      <div className="bg-white rounded-xl border border-slate-200/80 shadow-sm overflow-hidden">
-        <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+      <div className="bg-white dark:bg-slate-900 rounded-xl border border-slate-200/80 dark:border-slate-800 shadow-sm overflow-hidden transition-colors">
+        <div className="px-6 py-4 border-b border-slate-100 dark:border-slate-800 flex items-center justify-between">
           <div>
-            <h3 className="text-base font-bold text-slate-900">Today&apos;s Appointments</h3>
-            <p className="text-xs text-slate-500">
+            <h3 className="text-base font-bold text-slate-900 dark:text-white">Today&apos;s Appointments</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400">
               Live queue for today with real-time status controls
             </p>
           </div>
           <Link
             href="/dashboard/appointments"
-            className="text-xs font-semibold text-emerald-600 hover:text-emerald-700 flex items-center gap-1"
+            className="text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 flex items-center gap-1"
           >
             Full Calendar <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -197,7 +197,7 @@ export default function DashboardOverviewPage() {
             />
           </div>
         ) : (
-          <div className="divide-y divide-slate-100">
+          <div className="divide-y divide-slate-100 dark:divide-slate-800">
             {todayList.map((appt: any) => {
               const startTime = format(new Date(appt.startTime), "hh:mm a");
               const endTime = format(new Date(appt.endTime), "hh:mm a");
@@ -206,35 +206,35 @@ export default function DashboardOverviewPage() {
               return (
                 <div
                   key={appt.id}
-                  className="p-4 sm:p-5 hover:bg-slate-50/80 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
+                  className="p-4 sm:p-5 hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4"
                 >
                   <div className="flex items-start sm:items-center gap-4">
-                    <div className="w-16 text-center py-2 px-1 bg-emerald-50 border border-emerald-200/60 rounded-xl shrink-0">
-                      <span className="block text-xs font-bold text-emerald-800 uppercase">
+                    <div className="w-16 text-center py-2 px-1 bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200/60 dark:border-emerald-800/50 rounded-xl shrink-0">
+                      <span className="block text-xs font-bold text-emerald-800 dark:text-emerald-400 uppercase">
                         {startTime.split(" ")[1]}
                       </span>
-                      <span className="block text-sm font-black text-emerald-950">
+                      <span className="block text-sm font-black text-emerald-950 dark:text-emerald-200">
                         {startTime.split(" ")[0]}
                       </span>
                     </div>
 
                     <div className="space-y-1">
                       <div className="flex items-center gap-2 flex-wrap">
-                        <span className="font-bold text-slate-900 text-sm sm:text-base">
+                        <span className="font-bold text-slate-900 dark:text-white text-sm sm:text-base">
                           {appt.customer?.name}
                         </span>
                         <Badge variant={appt.status}>{appt.status}</Badge>
                       </div>
 
-                      <div className="flex items-center gap-3 text-xs text-slate-500 flex-wrap">
-                        <span className="flex items-center gap-1 font-medium text-slate-700">
-                          <Scissors className="w-3.5 h-3.5 text-emerald-600" />
+                      <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 flex-wrap">
+                        <span className="flex items-center gap-1 font-medium text-slate-700 dark:text-slate-300">
+                          <Scissors className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
                           {appt.service?.name} ({appt.service?.durationMinutes}m • ${appt.priceAtBooking})
                         </span>
                         {role === "ADMIN" && (
                           <span className="flex items-center gap-1">
                             <User className="w-3.5 h-3.5 text-slate-400" />
-                            Barber: <strong className="text-slate-700">{appt.barber?.name}</strong>
+                            Barber: <strong className="text-slate-700 dark:text-slate-200">{appt.barber?.name}</strong>
                           </span>
                         )}
                         <span className="flex items-center gap-1">
@@ -244,7 +244,7 @@ export default function DashboardOverviewPage() {
                       </div>
 
                       {appt.notes && (
-                        <p className="text-xs text-emerald-900/80 italic bg-emerald-50/50 px-2 py-0.5 rounded inline-block">
+                        <p className="text-xs text-emerald-900/80 dark:text-emerald-300 italic bg-emerald-50/50 dark:bg-emerald-950/40 px-2 py-0.5 rounded inline-block border border-emerald-100 dark:border-emerald-900/40">
                           Note: {appt.notes}
                         </p>
                       )}

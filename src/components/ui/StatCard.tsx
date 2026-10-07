@@ -14,11 +14,11 @@ interface StatCardProps {
 }
 
 const colorStyles = {
-  amber: "bg-amber-500/10 text-amber-600 border-amber-100",
-  blue: "bg-blue-500/10 text-blue-600 border-blue-100",
-  emerald: "bg-emerald-500/10 text-emerald-600 border-emerald-100",
-  purple: "bg-purple-500/10 text-purple-600 border-purple-100",
-  slate: "bg-slate-500/10 text-slate-600 border-slate-100",
+  amber: "bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-100 dark:border-amber-900/30",
+  blue: "bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-100 dark:border-blue-900/30",
+  emerald: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-100 dark:border-emerald-900/30",
+  purple: "bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-100 dark:border-purple-900/30",
+  slate: "bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-100 dark:border-slate-800",
 };
 
 export const StatCard: React.FC<StatCardProps> = ({
@@ -30,9 +30,9 @@ export const StatCard: React.FC<StatCardProps> = ({
   color = "emerald",
 }) => {
   return (
-    <div className="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+    <div className="bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200/80 dark:border-slate-800 shadow-sm hover:shadow-md transition-all">
       <div className="flex items-center justify-between">
-        <span className="text-xs font-medium text-slate-500 uppercase tracking-wider">
+        <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">
           {title}
         </span>
         <div
@@ -45,15 +45,15 @@ export const StatCard: React.FC<StatCardProps> = ({
         </div>
       </div>
       <div className="mt-3">
-        <div className="text-2xl font-bold text-slate-900 tracking-tight">
+        <div className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
           {value}
         </div>
         {subtitle && (
-          <p className="text-xs text-slate-500 mt-1">{subtitle}</p>
+          <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">{subtitle}</p>
         )}
       </div>
       {trend && (
-        <div className="mt-3 pt-3 border-t border-slate-100 flex items-center text-xs">
+        <div className="mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center text-xs">
           <span
             className={cn(
               "font-medium",

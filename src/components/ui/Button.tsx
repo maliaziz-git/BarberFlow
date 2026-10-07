@@ -27,9 +27,9 @@ export const Button: React.FC<ButtonProps> = ({
     secondary:
       "bg-slate-900 hover:bg-slate-800 text-white shadow-sm focus:ring-slate-700",
     outline:
-      "border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 focus:ring-slate-400",
+      "border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 focus:ring-slate-400",
     ghost:
-      "bg-transparent hover:bg-slate-100 text-slate-700 focus:ring-slate-300",
+      "bg-transparent hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 focus:ring-slate-300",
     danger:
       "bg-rose-600 hover:bg-rose-700 text-white shadow-sm focus:ring-rose-500",
   };
